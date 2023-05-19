@@ -4,6 +4,7 @@
   "description": "",
   "main": "sec/index.js",
   "scripts": {
+    "what" : "node-sass -w src/resources/scss/app.scss src/public/css/app.css",
     "start": "nodemon src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -23,6 +24,7 @@
   },
   "devDependencies": {
     "morgan": "^1.10.0",
+    "node-sass": "^8.0.0",
     "nodemon": "^2.0.22"
   }
 }
