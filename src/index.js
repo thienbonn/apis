@@ -10,6 +10,14 @@ app.use(morgan("combined"))
 
 app.use(express.static(path.join(__dirname, 'public')))
 
+// su ly voi truong hop form submit back end
+app.use(express.urlencoded({
+    extended: true
+}))
+
+// su ly tu truong hop nhan dc tu frontend
+app.use(express.json())
+
 // app.engine('hds', handlebars({
 //     extname: ".hds"
 // }));
@@ -17,14 +25,8 @@ app.engine('handlebars', handlebars());
 app.set('view engine', 'handlebars');
 app.set("views" ,path.join(__dirname, "resources/views"))
 
-// console.log(__dirname)
+// app.use(require("./routers"))
 
-
-app.get('/', (req, res) => {
-    return res.render("home");
-})
-app.get('/new', (req, res) => {
-    return res.render("new");
-})
+app.use(require("./routers/index"))
 
 app.listen(port, () => console.log(`test: listening on http://localhost:${port}`));
