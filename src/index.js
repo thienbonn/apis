@@ -1,10 +1,18 @@
 const express = require('express');
 const app = express();
 const path = require('path');
+const cors = require('cors');
+const cookieParser = require("cookie-parser");
+
+// connection.connect();
 
 const morgan = require('morgan');
 const handlebars = require("express-handlebars").engine;
-const port = 3000;
+const port = 8080;
+
+app.use(cookieParser())
+
+app.use(cors());
 
 app.use(morgan("combined"))
 
@@ -23,10 +31,11 @@ app.use(express.json())
 // }));
 app.engine('handlebars', handlebars());
 app.set('view engine', 'handlebars');
-app.set("views" ,path.join(__dirname, "resources/views"))
+app.set("views", path.join(__dirname, "resources","views"))
 
 // app.use(require("./routers"))
 
 app.use(require("./routers/index"))
+
 
 app.listen(port, () => console.log(`test: listening on http://localhost:${port}`));

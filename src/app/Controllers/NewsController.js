@@ -1,6 +1,6 @@
 class NewsController {
     index(req, res, next) {
-        res.render("news")
+        res.send("news")
     }
     test(req, res, next) {
         res.send("test")
@@ -11,6 +11,7 @@ class NewsController {
     home(req, res, next) {
         res.send("IS HOME!!!")
     }
+
 }
 
 module.exports = new NewsController;

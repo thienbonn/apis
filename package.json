@@ -2,9 +2,9 @@
   "name": "apis",
   "version": "1.0.0",
   "description": "",
-  "main": "sec/index.js",
+  "main": "src/index.js",
   "scripts": {
-    "what" : "node-sass -w src/resources/scss/app.scss src/public/css/app.css",
+    "what": "node-sass -w src/resources/scss/app.scss src/public/css/app.css",
     "start": "nodemon src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -19,8 +19,11 @@
   },
   "homepage": "https://github.com/thienbonn/apis#readme",
   "dependencies": {
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
     "express": "^4.18.2",
-    "express-handlebars": "^7.0.7"
+    "express-handlebars": "^7.0.7",
+    "mysql2": "^3.3.2"
   },
   "devDependencies": {
     "morgan": "^1.10.0",
