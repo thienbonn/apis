@@ -1,13 +1,16 @@
 const express = require('express');
+const multer = require("multer")
 
 const routerLogIn = express.Router()
+const storage = multer.memoryStorage();
+const upload = multer({ storage: storage });
 
 const routeLogin = require("../app/Controllers/Login")
-// console.log("login:",routeLogin)
+const middleware = require('../app/middleware/Middleware')
 
 routerLogIn.post("/login-Account", routeLogin.signUp)
-routerLogIn.post("/post_create", routeLogin.Post)
+routerLogIn.post("/register_Account", upload.single('avatar'), routeLogin.register)
+routerLogIn.post("/post_create", routeLogin.Create)
 
-// routerLogIn.post("/signUp",routeLogin.signUp)
 
 module.exports.routerLogIn = routerLogIn

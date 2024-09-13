@@ -1,0 +1,31 @@
+<div class="mt-3">
+    <h3>Bài báo đã xoá</h3>
+    
+    <a href="http://localhost:3000/news">
+        <h7>quay lại danh sách khoá học</h7>
+    </a>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="row">STT</th>
+                <th scope="col">tiêu đề khoá học</th>
+                <th scope="col">mô tả khoá học</th>
+                <th scope="col">thời gian xoá</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each data}}
+            <tr>
+                <th scope="row">{{this.id}}</th>
+                <td>{{this.name}}</td>
+                <td class="width: 5900px">{{this.description}}</td>
+                <td>{{this.deleted_at}}</td>
+                <td style="width: 125px">
+                    <a href="" class="btn btn-link check" data-id="{{this._id}}">Phục hồi bài báo</a>
+                </td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</div>
